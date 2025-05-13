@@ -1,0 +1,23 @@
+
+# train: /home/ipmi2023/project/Data_18t/ipmi2023/data_ipmi2023_18t/yolo/data/江苏省甲状腺/yolo_data/train
+# val: /home/ipmi2023/project/Data_18t/ipmi2023/data_ipmi2023_18t/yolo/data/江苏省甲状腺/yolo_data/val
+# test: /home/ipmi2023/project/Data_18t/ipmi2023/data_ipmi2023_18t/yolo/data/江苏省甲状腺/yolo_data/val
+
+train: /home/ipmi2023/project/Data_18t/ipmi2023/data_ipmi2023_18t/yolo/data/江苏省甲状腺/debugData/train
+val: /home/ipmi2023/project/Data_18t/ipmi2023/data_ipmi2023_18t/yolo/data/江苏省甲状腺/debugData/val
+# test: /home/ipmi2023/project/Data_18t/ipmi2023/data_ipmi2023_18t/yolo/data/debugData/images/test
+
+# number of classes
+nc: 5
+
+# Classes
+names:
+  0: PTC
+  1: AUS
+  2: FN
+  3: BFN
+  4: OT
+
+# python train_dual.py --workers 1 --device 0 --batch 1 --data data/JZX.yaml --img 2390 --cfg models/detect/yolov9-c.yaml --weights '' --name V8data-yolov9-c --hyp hyp.scratch-high.yaml --min-items 0 --epochs 150 --close-mosaic 15
+
+# python val.py --data data/JZX.yaml --img 2390 --batch 8 --conf 0.001 --iou 0.3 --device 1 --weights 'runs/train/yolov9-c/weights/best.pt' --save-json --name yolov9-c
